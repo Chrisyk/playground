@@ -1,0 +1,213 @@
+/* Seoul Quest — night market + neon adventure */
+
+:root {
+  --font-display: "Sora", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+
+  --bg-deep: #0a0b12;
+  --bg-card: rgba(22, 24, 38, 0.72);
+  --bg-card-solid: #161726;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(255, 107, 157, 0.35);
+
+  --text: #e8e9f0;
+  --text-muted: #9aa0b5;
+  --text-inverse: #0a0b12;
+
+  --accent-pink: #ff6b9d;
+  --accent-mint: #4ecdc4;
+  --accent-gold: #ffe66d;
+  --accent-violet: #a78bfa;
+  --accent-blue: #60a5fa;
+
+  --gradient-hero: linear-gradient(
+    135deg,
+    #1a1035 0%,
+    #0f172a 40%,
+    #0c4a6e 100%
+  );
+  --gradient-cta: linear-gradient(120deg, var(--accent-pink), var(--accent-violet));
+  --gradient-card: linear-gradient(
+    160deg,
+    rgba(255, 107, 157, 0.12),
+    rgba(96, 165, 250, 0.08)
+  );
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 0 40px rgba(255, 107, 157, 0.2);
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--bg-deep);
+  background-image: var(--gradient-hero);
+  background-attachment: fixed;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100svh;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.25rem 3rem;
+}
+
+h1,
+h2,
+h3,
+.display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+a {
+  color: var(--accent-mint);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+button,
+.btn {
+  font-family: var(--font-display);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius-sm);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--gradient-cta);
+  color: #fff;
+  padding: 0.85rem 1.5rem;
+  box-shadow: var(--shadow-glow);
+}
+.btn-primary:hover {
+  box-shadow: 0 0 48px rgba(167, 139, 250, 0.35);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  border: 1px solid var(--border-subtle);
+  padding: 0.65rem 1.1rem;
+}
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.card {
+  background: var(--gradient-card), var(--bg-card);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 157, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(255, 107, 157, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 157, 0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.animate-float {
+  animation: floaty 5s ease-in-out infinite;
+}
+
+.toast-enter {
+  animation: toast-in 0.35s ease forwards;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 640px) {
+  #root {
+    padding: 0 1rem 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #root {
+    padding: 0 0.75rem 2rem;
+  }
+}
