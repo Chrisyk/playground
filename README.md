@@ -1,5 +1,7 @@
 # Seoul Quest
 
+**Repository:** [github.com/Chrisyk/playground](https://github.com/Chrisyk/playground)
+
 A small React + TypeScript app for learning **Hangul** through a neon-styled quest map: lessons, quizzes, XP, badges, and daily missions. Progress is stored in **localStorage** in your browser.
 
 ## Stack
