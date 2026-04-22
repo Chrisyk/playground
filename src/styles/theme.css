@@ -129,6 +129,11 @@ button,
   background: rgba(255, 255, 255, 0.1);
 }
 
+a.btn,
+a.btn:hover {
+  text-decoration: none;
+}
+
 .card {
   background: var(--gradient-card), var(--bg-card);
   backdrop-filter: blur(16px);

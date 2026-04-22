@@ -52,8 +52,27 @@ export function Home() {
                   Continue quest
                 </Link>
               ) : null}
-              <Link to="/map" className="btn btn-ghost">
-                Open quest map
+              <Link
+                to="/map"
+                className="btn btn-ghost btn-icon"
+                aria-label="Open quest map"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-4.212 2.106a2 2 0 0 1-1.788 0L2.894 18.553A1 1 0 0 1 2.25 17.659V4.895a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0l4.212 2.106a2 2 0 0 0 1.788 0l4.212-2.106z" />
+                  <path d="M15 5.764v15" />
+                  <path d="M9 3.236v15" />
+                </svg>
               </Link>
             </div>
           </div>
